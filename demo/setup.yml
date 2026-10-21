@@ -1,0 +1,6 @@
+setup_timeout: 2
+setup: |
+  python -c "import time; print('installing...', flush=True); time.sleep(30)"
+---
+- description: Quick check
+  command: python -c "print('ok')"

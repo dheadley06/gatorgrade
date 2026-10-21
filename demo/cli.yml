@@ -1,0 +1,4 @@
+- description: Quick check
+  command: python -c "print('ok')"
+- description: Slow check with no timeout key
+  command: python -c "import time; print('still working...', flush=True); time.sleep(30)"

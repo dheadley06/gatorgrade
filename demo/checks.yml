@@ -1,0 +1,7 @@
+- description: Quick check
+  command: python -c "print('ok')"
+- description: Slow test suite (timeout 3)
+  timeout: 3
+  command: python -c "import time; print('running tests...', flush=True); time.sleep(30)"
+- description: Check that prints invalid UTF-8
+  command: python -c "import sys; sys.stdout.buffer.write(b'bad\xffbyte'); sys.exit(1)"
