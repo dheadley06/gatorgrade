@@ -1,0 +1,14 @@
+- description: Quick check
+  command: python -c "print('quick ok')"
+- description: Hanging with output
+  timeout: 2
+  command: python -c "import time; print('starting...', flush=True); time.sleep(30)"
+- description: Hanging with no output
+  timeout: 1
+  command: python -c "import time; time.sleep(30)"
+- description: Slow build
+  command: python -c "import time; print('building...', flush=True); time.sleep(3)"
+- description: Invalid bytes in both streams
+  command: python -c "import sys; sys.stdout.buffer.write(b'out\xffput\n'); sys.stdout.flush(); sys.stderr.buffer.write(b'err\xffor\n'); sys.exit(1)"
+- description: Last check
+  command: python -c "print('last ok')"

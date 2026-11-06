@@ -1,0 +1,8 @@
+setup_timeout: 2
+setup: |
+  python -c "print('first ran')"
+  python -c "import time; print('second is stuck', flush=True); time.sleep(30)"
+  python -c "print('third ran')"
+---
+- description: Never runs because setup failed
+  command: python -c "print('check ran')"
